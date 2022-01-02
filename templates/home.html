@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title>Predicting Backorders</title>
+  </head>
+
+  <body>
+    <h1><div style="text-align:center"><font color="blue">Predicting Backorder Probability from Product Performance</font></div></h1>
+    <hr>
+    </br>
+    <h2><div style="text-align:center">Please fill the complete form</div></h2>
+    </br>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-6'>
+          <form method="POST" action="/predict">
+            <div class="form-group">
+            <table style="width: 80%; margin: auto;">
+              <colgroup>
+                <col span="1" style="width: 50%;">
+                <col span="1" style="width: 50%;">
+             </colgroup>
+             <tbody>  
+              <tr>
+                <th><label for="nationalinv"><p class="font-weight-bold">National Inventory</p></label>
+                    <input type="text" name="nationalinv">
+                </th>
+                <th>
+                  <label for="potissue"><p class="font-weight-bold" style="tab-size: 4rem;">  Potential Issue</p></label>
+                  <select name="pot_iss">
+                    <option value="{{ 1 }}">Yes</option>
+                    <option value="{{ 0 }}">No</option>
+                  </select>
+                </th>
+              </tr>
+              <tr>
+              <th>
+              <label for="leadtime"><p class="font-weight-bold">Lead Time</p></label>
+              <input type="text" name="leadtime">
+              </th>
+            <th>
+              <label for="deckrisk"><p class="font-weight-bold">Deck risk</p></label>
+              <select name="deck_risk">
+                <option value="{{ 1 }}">Yes</option>
+                <option value="{{ 0 }}">No</option>
+              </select>
+            </th>
+          </tr>
+          <tr>
+            <th>    
+              <label for="intraqty"><p class="font-weight-bold">In Transit Quantity</p></label>
+              <input type="text" name="intraqty">
+              </th>
+            <th>
+              <label for="oec"><p class="font-weight-bold">OE Constraint</p></label>
+              <select name="oe_con">
+                <option value="{{ 1 }}">Yes</option>
+                <option value="{{ 0 }}">No</option>
+              </select>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <label for="3mnthforecast"><p class="font-weight-bold">Forecast for 3 months</p></label>
+              <input type="text" name="3mnthforecast">
+              </th>
+            <th>
+              <label for="ppap"><p class="font-weight-bold">PPAP Risk</p></label>
+              <select name="ppap_risk">
+                <option value="{{ 1 }}">Yes</option>
+                <option value="{{ 0 }}">No</option>
+              </select>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <label for="1mthsales"><p class="font-weight-bold">One Month Sales</p></label>
+              <input type="text" name="1mthsales">
+              </th>
+            <th>
+              <label for="autobuystop"><p class="font-weight-bold">Stop Auto Buy</p></label>
+              <select name="stop_autobuy">
+                <option value="{{ 1 }}">Yes</option>
+                <option value="{{ 0 }}">No</option>
+              </select>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <label for="pcspastdue"><p class="font-weight-bold">No of pieces past due</p></label>
+              <input type="text" name="pcspastdue">
+              </th>
+            <th>
+              <label for="revstop"><p class="font-weight-bold">Rev Stop</p></label>
+              <select name="rev_stop">
+                <option value="{{ 1 }}">Yes</option>
+                <option value="{{ 0 }}">No</option>
+              </select>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <label for="6mthavg"><p class="font-weight-bold">6 months performance average</p></label>
+              <input type="text" name="6mthavg">
+            </th>
+            <th>
+              <label for="lboqty"><p class="font-weight-bold">Local BO Quantity</p></label>
+              <input type="text" name="lboqty">
+            </th>
+          </tr>
+        </tbody>
+        </table>
+        <p style="text-align: center;"><input class='btn btn-primary' type='submit' value='Submit'></p>
+            </form>
+
+          </div>
+          </div>
+          </div>
+  </body>
+
+</html>
